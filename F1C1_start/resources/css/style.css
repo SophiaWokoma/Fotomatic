@@ -31,6 +31,7 @@ html {
   overflow: hidden;
 }
 
+/* changed the display value to inline-flex so that the images could all be on the same row */
 .image-container img {
   display: inline-flex;
   max-width: 100%;
@@ -44,8 +45,9 @@ html {
 
 /* Header */
 
+/* add z index , so that the header/nav bar is always in the front  */
 header {
-  z-index: 1;
+  z-index: 100;
   position: fixed;
   width: 100%;
   border-bottom: solid 1px #c6c1c1;
@@ -127,6 +129,7 @@ header .mobile {
 
 /* Sign Up Section */
 
+/* added background image to the container */
 #sign-up-section {
   display: flex;
   justify-content: flex-start;
@@ -140,18 +143,20 @@ header .mobile {
 }
 
 #sign-up-cta {
+/*   used relative positioning for the cta to position cta according to spec guidelines provided */
+  position: relative;
+  top: 171px;
+  left: 10%;
   padding: 0 5rem 2.5rem 5rem;
   border: solid 1px #979797;
   border-radius: 4px;
   background-color: #9dc20b;
-  margin: 10.625rem 6.25rem;
+ 
 }
 
 #sign-up-cta .content {
   width: 25.625rem;
   margin-top: 2rem;
-  margin-bottom: 1rem;
-
   font-family: "Roboto", sans-serif;
   font-size: 1.25rem;
   line-height: 1.4;
@@ -251,8 +256,13 @@ header .mobile {
 .feature .image-container {
   width: 90%;
   height: 65%;
-  padding-bottom: 2.5rem;
   margin: 0 auto;
+}
+
+/*   added padding to allow for greater whiterspace */
+
+.feature .content {
+  padding-bottom: 2.5rem;
 }
 
 .feature h2 {
@@ -331,6 +341,7 @@ header .mobile {
   max-width: 100%;
   padding: 0 1%;
   display: flex;
+/*   updated the display value to flex, so thagt the child items in this case the images could be next to each other */
 }
 
 @media only screen and (max-width: 760px) {
@@ -366,9 +377,14 @@ header .mobile {
 }
 
 #quotes-section .content {
-  padding: 5rem 0;
+  padding: 5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
+/* added a period before the quote selector to correctly select the class of quote and allow for the styles to be rendered properly */
 #quotes-section .quote {
   padding-right: 1.875rem;
   font-family: "Palatino", serif;
@@ -378,6 +394,7 @@ header .mobile {
   color: #4a4a4a;
 }
 
+/* added a period before the quote selector to correctly select the class of quote-citation and allow for the styles to be rendered properly */
 #quotes-section .quote-citation {
   height: 1.875rem;
 }
